@@ -1,5 +1,5 @@
 <h1 align="center">starknetphp</h1>
-<h3 align="center">starknetphp allows you to interact with Starknet from a PHP application</h2>
+<h3 align="center">starknetphp allows you to interact with StarkEx system from a PHP application</h2>
 
 <p align="center">
       <a href="https://starkware.co"><img alt="starkware" src="https://img.shields.io/badge/powered_by-StarkWare-navy"></a>

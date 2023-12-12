@@ -1,4 +1,4 @@
-<?
+<?php
 namespace starknetphp;
 
 use BN\BN;

@@ -56,7 +56,6 @@ class Starknet {
 		$token1OrPubKey,
 		$condition = null
 	) {
-		
 		$packedMessage = $instructionTypeBn;
 		$packedMessage = $packedMessage->ushln(31)->add($vault0Bn);
 		$packedMessage = $packedMessage->ushln(31)->add($vault1Bn);
@@ -141,7 +140,7 @@ class Starknet {
 	private function assertInRange($input, $lowerBound, $upperBound, $inputName = '') {
 		$messageSuffix = $inputName === '' ? 'invalid length' : 'invalid '.$inputName.' length';
 		if($input->gte($lowerBound)==0 || $input->lt($upperBound)==0){
-			$this->log("Message not signable, $messageSuffix.");
+			print "Message not signable, $messageSuffix.";
 		}
  	}
 	
@@ -152,7 +151,7 @@ class Starknet {
 			if(($x->compare(Constants::ZERO()) > 0 || $x->equals(Constants::ZERO())) && $x->compare(Numbers::toBN(Encode::addHexPrefix(Constants::FIELD_PRIME))) < 0){
 				// nist
 			}else{
-				$this->log("Invalid input $x");
+				print "Invalid input $x";
 			}
             for ($j = 0; $j < 252; $j++) {
                 $pt = $this->ecPoints[2 + $i * 252 + $j];
@@ -169,9 +168,5 @@ class Starknet {
 	
 	public function hasHexPrefix($str) {
 		return substr($str, 0, 2) === '0x';
-	}
-	
-	protected function log($input){
-		print print_r($input,true)."\n";
 	}
 }

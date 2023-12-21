@@ -1,5 +1,5 @@
-<h1 align="center">starknetphp</h1>
-<h3 align="center">starknetphp allows you to interact with PHP application for StarkEx needs</h2>
+<h1 align="center">starkwarephp</h1>
+<h3 align="center">starkwarephp allows you to interact with PHP application for StarkEx needs</h2>
 
 <p align="center">
       <a href="https://starkware.co"><img alt="starkware" src="https://img.shields.io/badge/powered_by-StarkWare-navy"></a>
@@ -12,10 +12,10 @@
 
 >  **Requires [PHP 8.0+](https://php.net/releases/)**
 
-Install `starknetphp` via the [Composer](https://getcomposer.org/) package manager:
+Install `starkwarephp` via the [Composer](https://getcomposer.org/) package manager:
 
 ```bash
-composer require debyl/starknetphp
+composer require debyl/starkwarephp
 ```
 
 

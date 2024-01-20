@@ -21,10 +21,10 @@ class Starknet {
 	private $maxEcdsaVal;
 	
 	public function __construct($privateKey, $publicKey) {
-        $this->starkKey_private = $privateKey;
-        $this->starkKey_public = $publicKey;
-        $this->initialize();
-    }
+		$this->starkKey_private = $privateKey;
+		$this->starkKey_public = $publicKey;
+		$this->initialize();
+	}
 
 	private function initialize(){
 		$this->zeroBn = new BN('0', 16);
@@ -86,16 +86,15 @@ class Starknet {
 		$tokenBuy,
 		$nonce,
 		$expirationTimestamp
-	) {
-		
+	) {	
 		if( Numbers::isHex($tokenSell)==0 || Numbers::isHex($tokenBuy)==0) exit('Hex strings expected to be prefixed with 0x.');
 		
 		$vaultSellBn = new BN($vaultSell);
 		$vaultBuyBn = new BN($vaultBuy);
-		$amountSellBn = new BN($amountSell, 10); 						// 10 z doc
-		$amountBuyBn = new BN($amountBuy, 10);   						// 10 z doc
-		$tokenSellBn = new BN(Encode::removeHexPrefix($tokenSell), 16); // 16 z doc
-		$tokenBuyBn = new BN(Encode::removeHexPrefix($tokenBuy), 16); 	// 16 z doc
+		$amountSellBn = new BN($amountSell, 10);
+		$amountBuyBn = new BN($amountBuy, 10); 
+		$tokenSellBn = new BN(Encode::removeHexPrefix($tokenSell), 16);
+		$tokenBuyBn = new BN(Encode::removeHexPrefix($tokenBuy), 16);
 		$nonceBn = new BN($nonce);
 		$expirationTimestampBn = new BN($expirationTimestamp);
 			

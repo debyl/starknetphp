@@ -144,26 +144,24 @@ class Starknet {
  	}
 	
 	private function pedersen(array $dataArray){
-        $point = $this->ecPoints[0];
-        for ($i = 0; $i < sizeof($dataArray); $i++) {
-            $x = Numbers::toBN($dataArray[$i]);
+		$point = $this->ecPoints[0];
+		for ($i = 0; $i < sizeof($dataArray); $i++) {
+			$x = Numbers::toBN($dataArray[$i]);
 			if(($x->compare(Constants::ZERO()) > 0 || $x->equals(Constants::ZERO())) && $x->compare(Numbers::toBN(Encode::addHexPrefix(Constants::FIELD_PRIME))) < 0){
-				// nist
+			// nist
 			}else{
 				print "Invalid input $x";
 			}
-            for ($j = 0; $j < 252; $j++) {
-                $pt = $this->ecPoints[2 + $i * 252 + $j];
-                assert(!$point->getX()->eq($pt->getX()));
-                $val = (int) $x->bitwise_and(Constants::ONE())->toString();
-                if ($val !== 0) {
-                    $point = $point->add($pt);
-                }
-                $x = $x->bitwise_rightShift(1);
-            }
-        }
-        return Encode::removeHexLeadingZero($point->getX()->toString(16));
-    }
+			for ($j = 0; $j < 252; $j++) {
+				$pt = $this->ecPoints[2 + $i * 252 + $j];
+				assert(!$point->getX()->eq($pt->getX()));
+				$val = (int) $x->bitwise_and(Constants::ONE())->toString();
+				if ($val !== 0) $point = $point->add($pt);
+				$x = $x->bitwise_rightShift(1);
+			}
+		}
+		return Encode::removeHexLeadingZero($point->getX()->toString(16));
+	}
 	
 	public function hasHexPrefix($str) {
 		return substr($str, 0, 2) === '0x';

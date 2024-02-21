@@ -20,6 +20,7 @@ $party_a_order = [
 //	"s": "0x4b6d75385aed025aa222f28a0adc6d58db78ff17e51c3f59e259b131cd5a1cc"
 //},
 
+
 $party_b_order = [
 	'vaultIdSell' => 221,
 	'vaultIdBuy' => 227,
@@ -39,6 +40,7 @@ $party_b_order = [
 //	"r": "0x2ee2b8927122f93dd5fc07a11980f0fab4c8358e5d1306bfee5e095355d2ad0",
 //	"s": "0x64d393473af2ebab736c579ad511bf439263e4740f9ad299498bda2e75b0e9"
 //},
+
 
 $party_a = new Starknet('0x3c1e9550e66958296d11b60f8e8e7a7ad990d07fa65d5f7652c4a6c87d4e3cc', '0x77a3b314db07c45076d11f62b6f9e748a39790441823307743cf00d6597ea43');
 print 'Party A Limit Order Message Hash: "' . $party_a->hashLimitOrder( $party_a_order ) . '"';

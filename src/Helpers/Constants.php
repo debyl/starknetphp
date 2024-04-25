@@ -10,20 +10,19 @@ use phpseclib3\Math\BigInteger;
 
 class Constants
 {
-    public static function ZERO(): BigInteger
-    {
+    public static function ZERO(): BigInteger{
         return Numbers::toBN(0);
     }
-    public static function ONE(): BigInteger
-    {
+    
+    public static function ONE(): BigInteger{
         return Numbers::toBN(1);
     }
-    public static function TWO(): BigInteger
-    {
+    
+    public static function TWO(): BigInteger{
         return Numbers::toBN(2);
     }
-    public static function MASK_250(): BigInteger
-    {
+    
+    public static function MASK_250(): BigInteger{
         return Numbers::toBN('1809251394333065553493296640760748560207343510400633813116524750123642650623');
     }
 

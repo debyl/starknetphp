@@ -15,13 +15,8 @@ class Numbers
     }
 
     public static function toBN(string|BigInteger|int $n, int $base = null): BigInteger{
-        if (is_string($n) && Numbers::isHex($n) && is_null($base)) {
-            return new BigInteger(Encode::removeHexPrefix($n), 16);
-        }
-        if (is_null($base)) {
-            return new BigInteger($n);
-        } else {
-            return new BigInteger($n, $base);
-        }
+        if (is_string($n) && Numbers::isHex($n) && is_null($base)) return new BigInteger(Encode::removeHexPrefix($n), 16);
+        if (is_null($base)) return new BigInteger($n);
+        else return new BigInteger($n, $base);
     }
 }
